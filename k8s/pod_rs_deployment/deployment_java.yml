@@ -7,6 +7,8 @@ spec:
     matchLabels:
       name: java-k8s
   replicas: 3
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
