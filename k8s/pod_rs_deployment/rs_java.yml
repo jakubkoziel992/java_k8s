@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-java
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: java-k8s
+  template:
+    metadata:
+      labels:
+        app: java-k8s
+    spec:
+      containers:
+      - name: java
+        image: kozijakinfo/java:1.0
+        ports:
+          - containerPort: 8080
