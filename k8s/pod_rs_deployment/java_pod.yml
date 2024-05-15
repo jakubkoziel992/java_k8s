@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: java-app
   labels:
-    version: v1
+    app: java_k8s
 spec:
   containers:
     - name: java
