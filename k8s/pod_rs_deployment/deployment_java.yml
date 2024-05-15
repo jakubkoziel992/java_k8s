@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-deployment
+spec:
+  selector:
+    matchLabels:
+      name: java-k8s
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: java-k8s
+    spec:
+      containers:
+      - name: java-app
+        image: kozijakinfo/java:1.0
+        ports:
+          - containerPort: 8080
